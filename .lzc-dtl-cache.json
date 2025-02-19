@@ -1,0 +1,44 @@
+{
+  "name": "Deluge",
+  "package": "cloud.lazycat.app.deluge",
+  "description": "BitTorge是一个轻量级的、自由软件的、跨平台的BitTorrent客户端",
+  "homepage": "https://deluge-torrent.org",
+  "author": "deluge",
+  "app_features": [
+    "background_task"
+  ],
+  "subdomain": "deluge",
+  "version": "2.1.1",
+  "iconPath": "icon.png",
+  "composePath": "docker-compose.yml",
+  "unsupported_platforms": [],
+  "lastRouteType": "from_compose",
+  "port_mappings": {
+    "deluge_8112_8112": {
+      "use": true,
+      "type": "http",
+      "path": "/",
+      "targetPath": "/"
+    },
+    "deluge_6881_6881": {
+      "use": true,
+      "type": "port",
+      "protocol": "udp"
+    },
+    "deluge_58846_58846": {
+      "use": true,
+      "type": "port",
+      "protocol": "tcp"
+    }
+  },
+  "image_lscr.io_linuxserver_deluge_latest": {
+    "originalImage": "lscr.io/linuxserver/deluge:latest",
+    "pushTarget": "lazycat",
+    "newImageName": "registry.lazycat.cloud/czyt/linuxserver/deluge:6bdbeda8660d300c",
+    "timestamp": "2025-02-19T12:40:18.501Z"
+  },
+  "deluge_volume_/config_action": "emptyDir",
+  "deluge_volume_/config_location": "app_data",
+  "deluge_volume_/downloads_action": "emptyDir",
+  "deluge_volume_/downloads_location": "app_data"
+}
