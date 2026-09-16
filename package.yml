@@ -1,0 +1,18 @@
+package: cloud.lazycat.czyt.app.deluge
+version: 2.1.1
+name: Deluge
+description: "BitTorge是一个轻量级的、自由软件的、跨平台的BitTorrent客户端"
+min_os_version: "1.5.0"
+homepage: https://deluge-torrent.org
+author: deluge
+unsupported_platforms:
+  - ios
+  - android
+  - tvos
+locales:
+  zh:
+    description: "轻量级的、自由软件的、跨平台的 BitTorrent 客户端"
+    name: Deluge
+  en:
+    description: "A lightweight, free, cross-platform BitTorrent client"
+    name: Deluge

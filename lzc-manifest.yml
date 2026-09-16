@@ -1,21 +1,12 @@
-lzc-sdk-version: "0.1"
-name: Deluge
-package: cloud.lazycat.czyt.app.deluge
-version: 2.1.1
-description: BitTorge是一个轻量级的、自由软件的、跨平台的BitTorrent客户端
-homepage: https://deluge-torrent.org
-author: deluge
 application:
   subdomain: deluge
   background_task: true
   multi_instance: false
-  gpu_accel: false
-  kvm_accel: false
-  usb_accel: false
   public_path:
-   - /
-  routes:
-    - /=http://deluge:8112/
+    - /
+  upstreams:
+    - location: /
+      backend: http://deluge:8112/
   ingress:
     - protocol: tcp
       port: 6881
@@ -28,8 +19,8 @@ application:
       service: deluge
 services:
   deluge:
-    container_name: deluge
-    image: registry.lazycat.cloud/czyt/linuxserver/deluge:9941dbe82df748dd
+    # upstream: linuxserver/deluge:2.1.1
+    image: docker.1ms.run/linuxserver/deluge:2.1.1
     environment:
       - PUID=1000
       - PGID=1000
@@ -38,8 +29,3 @@ services:
     binds:
       - /lzcapp/var/config:/config
       - /lzcapp/var/downloads:/downloads
-
-unsupported_platforms:
-  - ios
-  - android
-  - tvos
