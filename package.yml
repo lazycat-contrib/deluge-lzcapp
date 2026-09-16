@@ -1,5 +1,5 @@
 package: cloud.lazycat.czyt.app.deluge
-version: 2.1.1
+version: 2.2.0
 name: Deluge
 description: "BitTorge是一个轻量级的、自由软件的、跨平台的BitTorrent客户端"
 min_os_version: "1.5.0"

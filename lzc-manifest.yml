@@ -19,8 +19,8 @@ application:
       service: deluge
 services:
   deluge:
-    # upstream: linuxserver/deluge:2.1.1
-    image: docker.1ms.run/linuxserver/deluge:2.1.1
+    # upstream: linuxserver/deluge:2.2.0
+    image: docker.1ms.run/linuxserver/deluge:2.2.0
     environment:
       - PUID=1000
       - PGID=1000
